@@ -64,7 +64,7 @@ export default function App() {
         <ul className="rounded-xl overflow-hidden m-4 flex justify-center items-center flex-wrap border border-gray-300">
           {pageNumbers.map((pageNumber) => (
             <li
-              className={`p-3 rounded-sm cursor-pointer hover:bg-blue-100 ${pageNumber + 1 === currentPage ? "active-Paginate" : ""}`}
+              className={`px-4 py-2 rounded-sm cursor-pointer hover:bg-blue-100 ${pageNumber + 1 === currentPage ? "active-Paginate" : ""}`}
               onClick={() => changePaginate(pageNumber + 1)}
               key={pageNumber + 1}>
               <span>{pageNumber + 1}</span>
