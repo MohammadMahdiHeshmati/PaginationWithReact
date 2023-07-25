@@ -5,4 +5,4 @@ Pagination With React JS
 1. npm i
 2. npm run dev
 
-I hope you enjoy this project ❤️
+I hope you enjoy this project❤️
