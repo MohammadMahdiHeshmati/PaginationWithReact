@@ -55,6 +55,7 @@ export default function App() {
   return (
     <div className="p-2">
       <table className="w-full  border-gray-300">
+        <caption className="text-left text-2xl font-bold pb-3 pt-1 text-red-600">Todos</caption>
         <thead className="text-left bg-gray-100">
           <tr>
             <th className="border border-gray-300 p-2">ID</th>
