@@ -86,11 +86,12 @@ export default function App() {
               </td>
             </tr>
           ))}
-          
+
         </tbody>
       </table>
       <div className="flex justify-center items-start">
         <ul className="rounded-xl overflow-hidden m-4 flex justify-center items-center flex-wrap border border-gray-300">
+        
           {pageNumbers.map((pageNumber) => (
             <li
               className={`px-4 py-2 rounded-sm cursor-pointer hover:bg-blue-100 ${pageNumber + 1 === currentPage ? "active-Paginate" : ""}`}
@@ -99,6 +100,7 @@ export default function App() {
               <span>{pageNumber + 1}</span>
             </li>
           ))}
+          
         </ul>
       </div>
     </div>
