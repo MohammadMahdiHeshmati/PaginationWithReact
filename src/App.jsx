@@ -42,7 +42,6 @@ export default function App() {
     let newTodos = [...todos]
     let todoIndex = newTodos.findIndex((todo) => todo.id === id)
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed
-    
     setTodos(newTodos)
   }
 
