@@ -6,7 +6,6 @@
     .active-Paginate {
         @apply bg-blue-500 text-white
     }
-
     .active-Paginate:hover {
         background-color: rgb(59, 130, 246) !important;
     }
