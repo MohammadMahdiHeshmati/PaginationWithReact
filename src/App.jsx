@@ -68,6 +68,7 @@ export default function App() {
         <tbody className="text-left">
 
           {paginatedTodos.map((todo) => (
+
             <tr key={todo.id} className="hover:bg-blue-100 transition-all cursor-pointer">
               <td className="border border-gray-300 p-2">{todo.id}</td>
               <td className="border border-gray-300 p-2">{todo.title}</td>
@@ -85,6 +86,7 @@ export default function App() {
                 </button>
               </td>
             </tr>
+            
           ))}
 
         </tbody>
@@ -100,7 +102,7 @@ export default function App() {
               key={pageNumber + 1}>
               <span>{pageNumber + 1}</span>
             </li>
-            
+
           ))}
 
         </ul>
