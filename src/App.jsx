@@ -42,6 +42,7 @@ export default function App() {
     let newTodos = [...todos]
     let todoIndex = newTodos.findIndex((todo) => todo.id === id)
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed
+    
     setTodos(newTodos)
   }
 
@@ -49,7 +50,7 @@ export default function App() {
     let newTodos = [...todos]
     let todoIndex = newTodos.findIndex((todo) => todo.id === id)
     newTodos.splice(todoIndex, 1)
-    
+
     setTodos(newTodos)
     setRemoveTodo(!removeTodo)
   }
