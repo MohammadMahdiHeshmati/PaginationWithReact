@@ -49,6 +49,7 @@ export default function App() {
     let newTodos = [...todos]
     let todoIndex = newTodos.findIndex((todo) => todo.id === id)
     newTodos.splice(todoIndex, 1)
+    
     setTodos(newTodos)
     setRemoveTodo(!removeTodo)
   }
@@ -100,7 +101,7 @@ export default function App() {
               <span>{pageNumber + 1}</span>
             </li>
           ))}
-          
+
         </ul>
       </div>
     </div>
