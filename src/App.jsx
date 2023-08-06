@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 export default function App() {
   const [todos, setTodos] = useState([])
   const [paginatedTodos, setPaginatedTodos] = useState([])
-  
+
   const [currentPage, setCurrentPage] = useState(1)
   const [removeTodo, setRemoveTodo] = useState(false)
 
@@ -66,6 +66,7 @@ export default function App() {
           </tr>
         </thead>
         <tbody className="text-left">
+
           {paginatedTodos.map((todo) => (
             <tr key={todo.id} className="hover:bg-blue-100 transition-all cursor-pointer">
               <td className="border border-gray-300 p-2">{todo.id}</td>
@@ -85,6 +86,7 @@ export default function App() {
               </td>
             </tr>
           ))}
+          
         </tbody>
       </table>
       <div className="flex justify-center items-start">
