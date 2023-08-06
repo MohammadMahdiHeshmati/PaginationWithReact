@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 export default function App() {
   const [todos, setTodos] = useState([])
   const [paginatedTodos, setPaginatedTodos] = useState([])
+  
   const [currentPage, setCurrentPage] = useState(1)
   const [removeTodo, setRemoveTodo] = useState(false)
 
