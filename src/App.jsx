@@ -8,7 +8,6 @@ export default function App() {
   const [removeTodo, setRemoveTodo] = useState(false)
 
   let pageSize = 10;
-  let pageNumbers;
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos")
@@ -32,7 +31,6 @@ export default function App() {
   }
 
   let pagesCount = Math.ceil(todos.length / pageSize)
-  pageNumbers = Array.from(Array(pagesCount).keys())
 
   const changePaginate = (newPage) => {
     setCurrentPage(newPage)
@@ -86,25 +84,59 @@ export default function App() {
                 </button>
               </td>
             </tr>
-            
+
           ))}
 
         </tbody>
       </table>
       <div className="flex justify-center items-start">
         <ul className="rounded-xl overflow-hidden m-4 flex justify-center items-center flex-wrap border border-gray-300">
-        
-          {pageNumbers.map((pageNumber) => (
-
-            <li
-              className={`px-4 py-2 rounded-sm cursor-pointer hover:bg-blue-100 ${pageNumber + 1 === currentPage ? "active-Paginate" : ""}`}
-              onClick={() => changePaginate(pageNumber + 1)}
-              key={pageNumber + 1}>
-              <span>{pageNumber + 1}</span>
+          {currentPage !== 1 && (
+            <li className="px-2 py-2 rounded-sm cursor-pointer hover:bg-blue-100" onClick={() => changePaginate(currentPage - 1)}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
             </li>
-
-          ))}
-
+          )}
+          {currentPage !== 1 && currentPage !== 2 && (
+            <li
+              className="px-4 py-2 rounded-sm cursor-pointer hover:bg-blue-100"
+              onClick={() => changePaginate(1)}>
+              <span>1</span>
+            </li>
+          )}
+          {currentPage !== 1 && (
+            <li
+              className="px-4 py-2 rounded-sm cursor-pointer hover:bg-blue-100"
+              onClick={() => changePaginate(currentPage - 1)}>
+              <span>{currentPage - 1}</span>
+            </li>
+          )}
+          <li
+            className="px-4 py-2 rounded-sm cursor-text hover:bg-blue-100 active-Paginate">
+            <span>{currentPage}</span>
+          </li>
+          {currentPage !== pagesCount && (
+            <li
+              className="px-4 py-2 rounded-sm cursor-pointer hover:bg-blue-100"
+              onClick={() => changePaginate(currentPage + 1)}>
+              <span>{currentPage + 1}</span>
+            </li>
+          )}
+          {currentPage !== pagesCount && currentPage !== pagesCount - 1 && (
+            <li
+              className="px-4 py-2 rounded-sm cursor-pointer hover:bg-blue-100"
+              onClick={() => changePaginate(pagesCount)}>
+              <span>{pagesCount}</span>
+            </li>
+          )}
+          {currentPage !== pagesCount && (
+            <li className="px-2 py-2 rounded-sm cursor-pointer hover:bg-blue-100" onClick={() => changePaginate(currentPage + 1)}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </li>
+          )}
         </ul>
       </div>
     </div>
